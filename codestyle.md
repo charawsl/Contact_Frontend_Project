@@ -4,6 +4,8 @@ The project is written based on the code style provided by Vue.js official docum
 
 Source: https://v2.vuejs.org/v2/style-guide/?redirect=true
 
+For convenient, I just show essential rules here. Other not essential rules please go to the url above.
+
 ## Priority A Rules: Essential (Error Prevention)
 ### Multi-word component names
 
@@ -32,3 +34,13 @@ There are two common cases where this can be tempting:
 - To filter items in a list (e.g. v-for="user in users" v-if="user.isActive"). In these cases, replace users with a new computed property that returns your filtered list (e.g. activeUsers).
 
 - To avoid rendering a list if it should be hidden (e.g. v-for="user in users" v-if="shouldShowUsers"). In these cases, move the v-if to a container element (e.g. ul, ol).
+
+### Component style scoping
+
+**For applications, styles in a top-level App component and in layout components may be global, but all other components should always be scoped.  **
+
+This is only relevant for single-file components. It does not require that the scoped attribute be used. Scoping could be through CSS modules, a class-based strategy such as BEM, or another library/convention.  
+
+**Component libraries, however, should prefer a class-based strategy instead of using the scoped attribute.  **
+
+This makes overriding internal styles easier, with human-readable class names that don’t have too high specificity, but are still very unlikely to result in a conflict.
