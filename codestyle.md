@@ -10,3 +10,15 @@ Source: https://v2.vuejs.org/v2/style-guide/?redirect=true
 Component names should always be multi-word, except for root App components, and built-in components provided by Vue, such as <transition> or <component>.  
 
 This prevents conflicts with existing and future HTML elements, since all HTML elements are a single word.
+
+### Component data
+
+Component data must be a function.  
+
+When using the data property on a component (i.e. anywhere except on new Vue), the value must be a function that returns an object.
+
+### Prop definitions
+
+Prop definitions should be as detailed as possible.  
+
+In committed code, prop definitions should always be as detailed as possible, specifying at least type(s).
