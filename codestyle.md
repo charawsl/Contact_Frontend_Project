@@ -22,3 +22,13 @@ When using the data property on a component (i.e. anywhere except on new Vue), t
 Prop definitions should be as detailed as possible.  
 
 In committed code, prop definitions should always be as detailed as possible, specifying at least type(s).
+
+### Avoid v-if with v-for
+
+Never use v-if on the same element as v-for.  
+
+There are two common cases where this can be tempting:
+
+- To filter items in a list (e.g. v-for="user in users" v-if="user.isActive"). In these cases, replace users with a new computed property that returns your filtered list (e.g. activeUsers).
+
+- To avoid rendering a list if it should be hidden (e.g. v-for="user in users" v-if="shouldShowUsers"). In these cases, move the v-if to a container element (e.g. ul, ol).
