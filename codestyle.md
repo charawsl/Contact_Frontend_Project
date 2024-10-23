@@ -37,10 +37,14 @@ There are two common cases where this can be tempting:
 
 ### Component style scoping
 
-**For applications, styles in a top-level App component and in layout components may be global, but all other components should always be scoped.  **
+**For applications, styles in a top-level App component and in layout components may be global, but all other components should always be scoped.**
 
 This is only relevant for single-file components. It does not require that the scoped attribute be used. Scoping could be through CSS modules, a class-based strategy such as BEM, or another library/convention.  
 
-**Component libraries, however, should prefer a class-based strategy instead of using the scoped attribute.  **
+**Component libraries, however, should prefer a class-based strategy instead of using the scoped attribute.**
 
 This makes overriding internal styles easier, with human-readable class names that don’t have too high specificity, but are still very unlikely to result in a conflict.
+
+### Private property names
+
+**Use module scoping to keep private functions inaccessible from the outside. If that’s not possible, always use the $_ prefix for custom private properties in a plugin, mixin, etc that should not be considered public API. Then to avoid conflicts with code by other authors, also include a named scope (e.g. $_yourPluginName_).**
