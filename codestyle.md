@@ -47,4 +47,4 @@ This makes overriding internal styles easier, with human-readable class names th
 
 ### Private property names
 
-**Use module scoping to keep private functions inaccessible from the outside. If that’s not possible, always use the $_ prefix for custom private properties in a plugin, mixin, etc that should not be considered public API. Then to avoid conflicts with code by other authors, also include a named scope (e.g. $_yourPluginName_).**
+**Use module scoping to keep private functions inaccessible from the outside. If that’s not possible, always use the '$_' prefix for custom private properties in a plugin, mixin, etc that should not be considered public API. Then to avoid conflicts with code by other authors, also include a named scope (e.g. '$_yourPluginName_').**
